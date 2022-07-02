@@ -21,7 +21,6 @@ class CommandProcessor:
         keyword = command_set[0]
 
         if keyword == self.CREATE_PARKING_LOT:
-
             if len(command_set) != 2:
                 print("ERROR : PARKING_LOT NOT CREATED :\nplease enter valid set of arguments")
                 return
@@ -36,7 +35,6 @@ class CommandProcessor:
 
             
         elif keyword == self.PARK:
-            print(keyword)
             if self.parkingLot == None:
                 print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
             elif len(command_set) != 3:
@@ -65,11 +63,27 @@ class CommandProcessor:
             
 
         elif keyword == self.REGISTRATION_NUMBERS_OF_COLOR:
-            print(keyword)
+            if self.parkingLot == None:
+                print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
+            elif len(command_set) != 2:
+                print("ERROR : INVALID ARGUMENTS :\nplease enter valid set of arguments")
+            else:
+                self.parkingLot.findVehiclesWithColor(command_set[1])
+
         elif keyword == self.SLOT_NUMBER_OF_COLOR:
-            print(keyword)
+            if self.parkingLot == None:
+                print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
+            elif len(command_set) != 2:
+                print("ERROR : INVALID ARGUMENTS :\nplease enter valid set of arguments")
+            else:
+                self.parkingLot.findSlotsForCarsWithColor(command_set[1])
         elif keyword == self.SLOT_NUMBER_OF_REGISTRATION_NUMBER:
-            print(keyword)
+            if self.parkingLot == None:
+                print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
+            elif len(command_set) != 2:
+                print("ERROR : INVALID ARGUMENTS :\nplease enter valid set of arguments")
+            else:
+                self.parkingLot.findSlotWithRegistrationNumber(command_set[1])
             
         elif keyword == self.PRINTVAR:
             if self.parkingLot is not None:

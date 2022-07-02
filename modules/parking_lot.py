@@ -55,4 +55,46 @@ class ParkingLot:
         
         print("---------------------------------------------------------------")
 
+    def findVehiclesWithColor(self,color):
+        filtered_list = []
+        for slot in self.parking_map:
+            if self.parking_map[slot]['vehicle_color'] == color:
+                filtered_list.append(self.parking_map[slot]['registration_number'])
+        
+        print("----------------------VEHICLES OF COLOR----------------------------")
+        print('Color:' , color, '\nThey are:')
+        if len(filtered_list) == 0:
+            print("There are no cars with color",color)
+        else:
+            for item in filtered_list:
+                print(item)
+        print("-------------------------------------------------------------------")
+        
+    def findSlotsForCarsWithColor(self,color):
+        filtered_list = []
+        for slot in self.parking_map:
+            if self.parking_map[slot]['vehicle_color'] == color:
+                slot_text = "slot " + str(slot) 
+                filtered_list.append(slot_text)
+        
+        print("------------------------SLOTS OF COLOR-----------------------------")
+        print('Color:' , color, '\nThey are:')
+        if len(filtered_list) == 0:
+            print("There are no cars with color",color)
+        else:
+            for item in filtered_list:
+                print(item)
+        print("-------------------------------------------------------------------")
+
     
+    def findSlotWithRegistrationNumber(self,registration_number):
+        
+        print("------------------------SLOT WITH CAR REGISTRATION NO-----------------------------")
+        for slot in self.parking_map:
+            if self.parking_map[slot]['registration_number'] == registration_number:
+                print('The car with registration number',registration_number,'is parket at slot',slot)    
+                print("----------------------------------------------------------------------------------") 
+                return
+        
+        print('The car with registration number',registration_number,'wasnt found in our parking')
+        print("----------------------------------------------------------------------------------")
