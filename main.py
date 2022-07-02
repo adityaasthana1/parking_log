@@ -4,8 +4,16 @@ import modules.processor as cp
 
 processor = cp.CommandProcessor()
 
+def startListening():
+    while 1:
+        inputCommand = input('Enter A Command : ')
+        processor.processCommand(inputCommand = inputCommand)
+
 try:
-    # If the file is passed as an argument, We will try to open it and read the file
+    '''
+    If the file is passed as an argument, We will try to open it and read the file
+
+    '''
     with open(sys.argv[1], 'r') as f:
         list_of_commands = []
         for line in f:
@@ -20,8 +28,7 @@ try:
         for command in list_of_commands:
             processor.processCommand(command)
 
+    startListening()
        
 except: 
-    while 1:
-        inputCommand = input('Enter A Command : ')
-        processor.processCommand(inputCommand = inputCommand)
+    startListening()
