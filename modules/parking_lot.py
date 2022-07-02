@@ -30,4 +30,20 @@ class ParkingLot:
                 'registration_number' : vehicle_registration_number,
                 'vehicle_color' : vehicle_color
             }
-            
+    
+    '''
+    NOTE : We are using 1 based indexing here.
+    So remember to increment values by 1 when printing
+    '''
+    def leave(self,slot_number):
+        if slot_number > self.number_of_slots:
+            print("Please enter a valid slot number")
+        elif slot_number not in self.parking_map:
+            print("There is not car parked here, Can not leave")
+        else:
+            del self.parking_map[slot_number-1]
+            self.number_of_cars_parked = self.number_of_cars_parked - 1
+            self.occupied_hash[slot_number-1] = 0
+
+
+        
