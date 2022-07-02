@@ -8,9 +8,9 @@ class ParkingLot:
 
     def printVariables(self):
         print('number of slots :',self.number_of_slots)
-        print('occupied hash :',self.number_of_slots)
-        print('parking map :',self.number_of_slots)
-        print('number of cars parked :',self.number_of_slots)
+        print('occupied hash :',self.occupied_hash)
+        print('parking map :',self.parking_map)
+        print('number of cars parked :',self.number_of_cars_parked)
 
     def findClosestIndex(self):
         for i in range(0,self.number_of_slots):
