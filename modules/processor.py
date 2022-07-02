@@ -1,4 +1,7 @@
+import modules.parking_lot as pl
+
 class CommandProcessor:
+    
     def __init__(self): 
         self.CREATE_PARKING_LOT = 'create_parking_lot'       
         self.PARK = 'park'
@@ -7,7 +10,7 @@ class CommandProcessor:
         self.REGISTRATION_NUMBERS_OF_COLOR = 'registration_numbers_for_cars_with_colour'
         self.SLOT_NUMBER_OF_COLOR = 'slot_numbers_for_cars_with_colour'
         self.SLOT_NUMBER_OF_REGISTRATION_NUMBER = 'slot_number_for_registration_number'
-
+        self.parkingLot = None
 
     def processCommand(self,inputCommand):
         command_set = inputCommand.split()
@@ -17,7 +20,20 @@ class CommandProcessor:
         keyword = command_set[0]
 
         if keyword == self.CREATE_PARKING_LOT:
-            print(keyword)
+
+            if len(command_set) != 2:
+                print("ERROR : PARKING_LOT NOT CREATED :\nplease enter valid set of arguments")
+                return
+            elif self.parkingLot != None:
+                print('ERROR : PARKING_LOT already exists')
+            elif not command_set[1].isnumeric():
+                print('ERROR : ENTER VALID PARAMETER:\nThe input should be a positive integer')
+            else:
+                lot_size = command_set[1]
+                self.parkingLot = pl.ParkingLot(lot_size)
+                print("Parking lot of size:",lot_size," created successfully!" )
+
+            
         elif keyword == self.PARK:
             print(keyword)
         elif keyword == self.LEAVE:
@@ -34,3 +50,4 @@ class CommandProcessor:
             print('ERROR : keyword \'', keyword, '\' is not a valid keyword' )
 
         
+    

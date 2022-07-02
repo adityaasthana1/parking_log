@@ -10,12 +10,13 @@ try:
         list_of_commands = []
         for line in f:
             stripped_line = line.strip() #Strip all the lines in the file 
-            list_of_commands.append(stripped_line)
-            '''
-            line_list = stripped_line.split()
-            list_of_command_set.append(line_list)
-            '''
+            list_of_commands.append(stripped_line) # Add all the lines to the list_of_commands
+            
         
+        '''
+        We iterate through all the commands in the created list and execute it
+        We use processCommand() from CommandProcessor class to perform execution 
+        '''
         for command in list_of_commands:
             processor.processCommand(command)
 
