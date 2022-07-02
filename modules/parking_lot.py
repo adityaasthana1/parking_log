@@ -46,4 +46,10 @@ class ParkingLot:
             self.occupied_hash[slot_number-1] = 0
 
 
+    def status(self):
+        print("--------------------------STATUS--------------------------------")
+        print('total vehicles in the parking lot :' , self.number_of_cars_parked,"\n\nThey are:")
+        for slot in self.parking_map:
+            print("Slot number:", (int(slot) + 1), "  Vehicle Registration Number:", self.parking_map[slot]['registration_number'], "  Vehicle Color:" , self.parking_map[slot]['vehicle_color'])
         
+        print("---------------------------------------------------------------")

@@ -60,6 +60,12 @@ class CommandProcessor:
 
         elif keyword == self.STATUS:
             print(keyword)
+            if self.parkingLot == None:
+                print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
+            else:
+                self.parkingLot.status()
+            
+
         elif keyword == self.REGISTRATION_NUMBERS_OF_COLOR:
             print(keyword)
         elif keyword == self.SLOT_NUMBER_OF_COLOR:
