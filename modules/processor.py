@@ -47,7 +47,6 @@ class CommandProcessor:
                 self.parkingLot.park(vehicle_registration_number,vehicle_color)
 
         elif keyword == self.LEAVE:
-            print(keyword)
             if self.parkingLot == None:
                 print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
             elif len(command_set) != 2:
@@ -59,7 +58,6 @@ class CommandProcessor:
                 self.parkingLot.leave(int(slot_number))
 
         elif keyword == self.STATUS:
-            print(keyword)
             if self.parkingLot == None:
                 print('ERROR : PARKING_LOT_NOT_EXIST:\nParking lot does not exist. Please create one first.')
             else:

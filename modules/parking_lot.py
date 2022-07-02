@@ -30,7 +30,7 @@ class ParkingLot:
                 'registration_number' : vehicle_registration_number,
                 'vehicle_color' : vehicle_color
             }
-    
+            print('vehicle parked in slot',closest_slot)
     '''
     NOTE : We are using 1 based indexing here.
     So remember to increment values by 1 when printing
@@ -44,6 +44,7 @@ class ParkingLot:
             del self.parking_map[slot_number-1]
             self.number_of_cars_parked = self.number_of_cars_parked - 1
             self.occupied_hash[slot_number-1] = 0
+            print('vehicle successfully left from slot',slot_number)
 
 
     def status(self):
@@ -53,3 +54,5 @@ class ParkingLot:
             print("Slot number:", (int(slot) + 1), "  Vehicle Registration Number:", self.parking_map[slot]['registration_number'], "  Vehicle Color:" , self.parking_map[slot]['vehicle_color'])
         
         print("---------------------------------------------------------------")
+
+    
