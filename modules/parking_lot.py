@@ -84,8 +84,11 @@ class ParkingLot:
         # remove vehicle from slot operation
         else:
             # remove the (slot,vehicle) data from the key-value store
-            del self.parking_map[slot_number-1]
-
+            try:
+                del self.parking_map[slot_number-1]
+            except:
+                print('Already deleted')
+                return
             # decrement the number of cars in the parking lot by 1
             self.number_of_cars_parked = self.number_of_cars_parked - 1
 
@@ -129,7 +132,7 @@ class ParkingLot:
         filtered_list = []
         for slot in self.parking_map:
             if self.parking_map[slot]['vehicle_color'] == color:
-                slot_text = "slot " + str(slot) 
+                slot_text = "slot " + str(slot+1) 
                 filtered_list.append(slot_text)
         
         print("------------------------SLOTS OF COLOR-----------------------------")
@@ -149,7 +152,7 @@ class ParkingLot:
         print("------------------------SLOT WITH CAR REGISTRATION NO-----------------------------")
         for slot in self.parking_map:
             if self.parking_map[slot]['registration_number'] == registration_number:
-                print('The car with registration number',registration_number,'is parket at slot',slot)    
+                print('The car with registration number',registration_number,'is parket at slot',(int(slot)+1))    
                 print("----------------------------------------------------------------------------------") 
                 return
         

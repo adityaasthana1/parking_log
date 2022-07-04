@@ -72,7 +72,7 @@ class CommandProcessor:
                 print('ERROR : ENTER VALID PARAMETER:\nThe input should be a positive integer')
             else:
                 slot_number = command_set[1]
-                self.parkingLot.leave(int(slot_number))
+                self.parkingLot.leave(int(slot_number)) 
 
         elif keyword == self.STATUS:
             if self.parkingLot == None:
