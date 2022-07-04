@@ -9,6 +9,8 @@ Flam Assignment - Parking Lot by Aditya Asthana
 1. Open Powershell or any command line interface.
 2. cd *root_of_repository*
 3. python main.py \<filename\>  <br>*for example : "python main.py sample.txt"* (filename is optional)
+4. If you want to run commands from a file first, go ahead and try "python main.py sample.txt".
+5. If you want to start in Interactive Mode, just start with "python main.py". 
 4. Enter commands (keywords with parameters)
 
 ## Keywords
