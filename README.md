@@ -11,7 +11,7 @@ Flam Assignment - Parking Lot by Aditya Asthana
 3. python main.py \<filename\>  <br>*for example : "python main.py sample.txt"* (filename is optional)
 4. If you want to run commands from a file first, go ahead and try "python main.py sample.txt".
 5. If you want to start in Interactive Mode, just start with "python main.py". 
-4. Enter commands (keywords with parameters)
+6. Enter commands (keywords with parameters)
 
 ## Keywords
 ### 1. create_parking_lot <number_of_slots> : 

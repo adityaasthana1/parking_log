@@ -34,6 +34,7 @@ class CommandProcessor:
         # Just in case we are given with an empty command
         if len(command_set) == 0:
             print("Command cannot be empty")
+            return
 
         #The 0th index of each command set will be our primary keyword that defines a task.
         keyword = command_set[0]
