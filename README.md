@@ -5,9 +5,10 @@ Flam Assignment - Parking Lot by Aditya Asthana
 1. Python 3.7.9 or greater
 
 ## Instructions 
+0. If you don't have python installed, please install with version 3.7.9 or greater.
 1. Open Powershell or any command line interface.
 2. cd *root_of_repository*
-3. python main.py \<filename\>  <br>*for example : "python main.py sample.txt"*
+3. python main.py \<filename\>  <br>*for example : "python main.py sample.txt"* (filename is optional)
 4. Enter commands (keywords with parameters)
 
 ## Keywords

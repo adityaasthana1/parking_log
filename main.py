@@ -11,8 +11,8 @@ def startListening():
         processor.processCommand(inputCommand = inputCommand)
 
 def main():
-    try:
 
+    try:
         # If the file is passed as an argument, We will try to open it and read the file
         # Otherwise the control of the program will be passed to the 'except' block
         with open(sys.argv[1], 'r') as f:
@@ -20,12 +20,9 @@ def main():
             for line in f:
                 stripped_line = line.strip() # Strip all the lines in the file 
                 list_of_commands.append(stripped_line) # Add all the lines to the list_of_commands
-                
-            
             
             # We iterate through all the commands in the created list and execute it
             # We use processCommand() from CommandProcessor class to perform execution 
-            
             for command in list_of_commands:
                 processor.processCommand(command)
 

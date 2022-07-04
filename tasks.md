@@ -1,4 +1,6 @@
-##List of Tasks: 
+*This file was created just to understand the tasks to be worked upon.*
+
+## List of Tasks: 
 
 1. *create_parking_lot* <number_of_slots> : most important command. Required to create parking lot. Program won't move ahead until parking lot is created.
 
